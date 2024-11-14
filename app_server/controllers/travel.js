@@ -1,8 +1,11 @@
+var fs = require('fs'); 
+var trips = JSON.parse(fs.readFileSync('../travlr/app_server/data/trips.json','utf8')); 
+
 /* GET Travel View */
 const travel = (req, res) => {
-    res.render('travel', {title: "Travlr Getaways"});
+    res.render('travel', {title: "Travlr Getaways", trips});
 };
 
 module.exports = {
     travel
-}
+};
